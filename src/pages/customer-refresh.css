@@ -1,0 +1,179 @@
+/* Cardrona / Treble Cone customer experience — mobile-first WeChat preview.
+   Scoped styles deliberately do not affect the operations dashboard. */
+.cardrona-mini {
+  --mini-ink: #172a35;
+  --mini-subtle: #6c7a81;
+  --mini-red: #bb2340;
+  --mini-teal: #276e71;
+  --mini-line: #e1e7e9;
+  --mini-paper: #f5f7f7;
+  --mini-white: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e4e9ec;
+  padding: 0;
+  color: var(--mini-ink);
+  height: 100vh;
+  height: 100dvh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.cardrona-mini .mini-app-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  background: var(--mini-paper);
+  box-shadow: 0 20px 70px rgba(11, 31, 43, .12);
+}
+.cardrona-mini .mini-scroll-view {
+  min-height: 0;
+  min-width: 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+.cardrona-mini .mini-scroll-view::-webkit-scrollbar { display: none; }
+.cardrona-mini :is(button, a, summary, input, select) { -webkit-tap-highlight-color: transparent; }
+.cardrona-mini :is(button, a, summary):focus-visible { outline: 3px solid #ea9c56; outline-offset: 3px; }
+.cardrona-mini button:disabled { cursor: not-allowed; }
+.cardrona-mini .font-serif { font-family: 'Archivo', 'Inter', system-ui, sans-serif; letter-spacing: -.025em; }
+
+/* Header: intentionally compact to respect WeChat's native capsule and safe area. */
+.cardrona-mini .mini-header { background: #fff; border-bottom: 1px solid var(--mini-line); }
+.cardrona-mini .mini-header-top { height: 62px; background: #142637; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; gap: 12px; }
+.cardrona-mini .mini-brand { display: flex; align-items: center; gap: 10px; min-width: 0; color: #fff; }
+.cardrona-mini .mini-brand-mark { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; flex: none; border-radius: 50%; background: #d31d42; font-size: 9px; font-weight: 900; line-height: 9px; letter-spacing: -.05em; text-align: left; }
+.cardrona-mini .mini-brand-name { display: grid; gap: 4px; min-width: 0; }
+.cardrona-mini .mini-brand-name b { font-size: 13px; line-height: 1; letter-spacing: .19em; font-weight: 760; }
+.cardrona-mini .mini-brand-name small { font-size: 8px; line-height: 1; letter-spacing: .30em; color: #b2bec7; }
+.cardrona-mini .mini-lang-switch { display: flex; gap: 3px; padding: 3px; flex: none; border: 1px solid #dce4e8; border-radius: 50px; background: #f5f7f7; }
+.cardrona-mini .mini-lang-switch button { border: 0; color: #51616d; background: transparent; border-radius: 50px; padding: 7px 10px; font-size: 11px; line-height: 1; font-weight: 700; min-width: 35px; transition: .2s background, .2s color; }
+.cardrona-mini .mini-lang-switch button.is-selected { background: #315b6c; color: #fff; }
+.cardrona-mini .mini-header-bottom { display: flex; align-items: center; gap: 10px; height: 51px; padding: 6px 16px; background: #fff; }
+.cardrona-mini .mini-mountain-switch { display: grid; grid-template-columns: 1fr 1fr; align-items: center; flex: 1; min-width: 0; height: 37px; padding: 3px; border-radius: 11px; background: #edf2f3; }
+.cardrona-mini .mini-mountain-switch button { height: 31px; border-radius: 9px; white-space: nowrap; color: #62727c; font-size: 12px; font-weight: 600; }
+.cardrona-mini .mini-mountain-switch button.is-selected { color: #fff; background: #253c4a; box-shadow: 0 1px 4px rgba(13,36,51,.14); }
+.cardrona-mini .mini-season-tag { white-space: nowrap; font-size: 9px; letter-spacing: .08em; font-weight: 800; color: #647680; }
+.cardrona-mini .mini-subheader { min-height: 63px; background: rgba(255,255,255,.98); border-bottom: 1px solid var(--mini-line); display: flex; align-items: center; padding: 0 14px 0 7px; gap: 9px; }
+.cardrona-mini .mini-subheader h1 { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--mini-ink); font-family: 'Archivo','Inter',sans-serif; letter-spacing: -.025em; font-size: clamp(16px, 4.3vw, 19px); line-height: 1.25; font-weight: 760; }
+.cardrona-mini .mini-back-button { height: 43px; width: 40px; display: flex; align-items: center; justify-content: center; flex: none; color: var(--mini-ink); border-radius: 12px; }
+.cardrona-mini .mini-back-button:hover { background: #f1f4f5; }
+
+/* Mountain report: concise hero first, optional details. Never imply stale data is live. */
+.cardrona-mini .mini-mountain-report { padding: 14px 16px 0; }
+.cardrona-mini .mini-mountain-hero { position: relative; isolation: isolate; border-radius: 19px; height: 206px; background: #1e3d48; overflow: hidden; box-shadow: 0 8px 24px rgba(20,37,46,.08); }
+.cardrona-mini .mini-mountain-hero > img, .cardrona-mini .mini-hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cardrona-mini .mini-mountain-hero > img { object-fit: cover; }
+.cardrona-mini .mini-hero-shade { background: linear-gradient(180deg,rgba(6,27,37,.45) 0%,rgba(7,25,36,.22) 30%,rgba(5,24,38,.86) 100%); }
+.cardrona-mini .mini-hero-overline { position: absolute; top: 14px; left: 16px; right: 14px; display: flex; align-items: center; justify-content: space-between; gap: 8px; color: white; font-weight: 780; font-size: 10px; letter-spacing: .17em; }
+.cardrona-mini .mini-hero-status { letter-spacing: .035em; font-size: 9px; color: #fff; padding: 6px 8px; border: 1px solid rgba(255,255,255,.46); border-radius: 7px; background: rgba(20,38,55,.57); }
+.cardrona-mini .mini-hero-copy { position: absolute; bottom: 16px; left: 17px; right: 17px; color: #fff; }
+.cardrona-mini .mini-hero-copy > small { color: #c3d8de; letter-spacing: .11em; font-size: 9px; font-weight: 750; }
+.cardrona-mini .mini-hero-copy h1 { font-family: 'Archivo','Inter',sans-serif; font-size: 23px; line-height: 1.15; max-width: 330px; margin: 7px 0 5px; letter-spacing: -.035em; font-weight: 800; }
+.cardrona-mini .mini-hero-copy p { font-size: 11px; line-height: 1.55; color: #e8eef0; }
+.cardrona-mini .mini-hero-copy a { margin-top: 9px; display: inline-flex; align-items: center; gap: 3px; font-weight: 700; font-size: 10px; color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.cardrona-mini .mini-report-disclosure { margin-top: 10px; border-radius: 14px; overflow: hidden; border: 1px solid var(--mini-line); background: #fff; }
+.cardrona-mini .mini-report-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 14px; cursor: pointer; list-style: none; }
+.cardrona-mini .mini-report-disclosure > summary::-webkit-details-marker { display: none; }
+.cardrona-mini .mini-report-disclosure > summary > span:first-child { display: flex; align-items: center; gap: 10px; color: var(--mini-teal); }
+.cardrona-mini .mini-report-disclosure > summary > span:first-child > span { display: grid; gap: 3px; }
+.cardrona-mini .mini-report-disclosure summary b { font-size: 12px; color: var(--mini-ink); }
+.cardrona-mini .mini-report-disclosure summary small { font-size: 9px; line-height: 1.4; color: var(--mini-subtle); }
+.cardrona-mini .mini-report-summary-action { display: inline-flex; align-items: center; white-space: nowrap; gap: 3px; font-size: 10px; color: var(--mini-teal); font-weight: 700; }
+.cardrona-mini .mini-report-tabs { display: grid; grid-template-columns: repeat(3,1fr); background: #f2f5f6; border-block: 1px solid var(--mini-line); }
+.cardrona-mini .mini-report-tabs button { padding: 12px; color: #73828b; font-weight: 650; font-size: 11px; }
+.cardrona-mini .mini-report-tabs button.is-selected { background: #fff; box-shadow: inset 0 -2px 0 var(--mini-red); color: var(--mini-ink); }
+.cardrona-mini .mini-report-tab-content { padding: 15px; }
+.cardrona-mini .mini-conditions-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+.cardrona-mini .mini-conditions-grid > div { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.cardrona-mini .mini-conditions-grid svg { color: #738a98; }
+.cardrona-mini .mini-conditions-grid b { color: var(--mini-ink); font-size: 13px; }
+.cardrona-mini .mini-conditions-grid small { color: var(--mini-subtle); font-size: 9px; line-height: 1.35; }
+.cardrona-mini .mini-lift-summary { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cardrona-mini .mini-lift-summary a { border: 1px solid var(--mini-line); border-radius: 10px; padding: 12px; }
+.cardrona-mini .mini-lift-summary a b { display: block; font-size: 18px; color: var(--mini-teal); }
+.cardrona-mini .mini-lift-summary a span { display: flex; align-items: center; gap: 4px; margin-top: 3px; font-size: 10px; color: var(--mini-subtle); }
+.cardrona-mini .mini-weather-forecast { margin-top: 12px; }
+.cardrona-mini .mini-weather-forecast > div { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--mini-line); padding: 9px 0; font-size: 11px; }
+.cardrona-mini .mini-road-advisory { display: flex; gap: 11px; color: #7c441f; font-size: 12px; }
+.cardrona-mini .mini-road-advisory p { margin: 6px 0; color: var(--mini-subtle); line-height: 1.55; }
+.cardrona-mini .mini-road-advisory a { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; }
+.cardrona-mini .mini-official-link { display: flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 11px; font-weight: 700; color: var(--mini-teal); }
+
+/* Homepage: make booking the obvious first action, then shortcuts and discovery. */
+.cardrona-mini .mini-home { padding-bottom: 38px; }
+.cardrona-mini .mini-home-cta-area, .cardrona-mini .mini-quick-section, .cardrona-mini .mini-discover-section { padding: 0 16px; }
+.cardrona-mini .mini-home-cta-area { padding-top: 18px; }
+.cardrona-mini .mini-section-heading { display: flex; align-items: center; gap: 12px; font-size: 9px; letter-spacing: .17em; font-weight: 800; color: #8a7f7d; margin-bottom: 9px; }
+.cardrona-mini .mini-section-rule { flex: 1; border-top: 1px solid #dfe4e5; }
+.cardrona-mini .mini-main-booking { display: flex; align-items: center; gap: 13px; min-height: 78px; padding: 15px; border-radius: 15px; color: #fff; background: #b82341; box-shadow: 0 7px 17px rgba(168,30,59,.16); }
+.cardrona-mini .mini-main-booking-icon { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; flex: none; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; }
+.cardrona-mini .mini-main-booking-copy { display: grid; gap: 5px; flex: 1; min-width: 0; }
+.cardrona-mini .mini-main-booking-copy b { font-size: 17px; letter-spacing: -.02em; line-height: 1.15; font-weight: 800; }
+.cardrona-mini .mini-main-booking-copy small { font-size: 11px; color: #ffebed; line-height: 1.4; }
+.cardrona-mini .mini-quick-section { margin-top: 15px; }
+.cardrona-mini .mini-quick-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); column-gap: 6px; row-gap: 12px; background: #fff; border: 1px solid var(--mini-line); border-radius: 17px; padding: 16px 7px 13px; }
+.cardrona-mini .mini-quick-link { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 8px; min-width: 0; color: #576974; font-size: 10px; line-height: 1.3; text-align: center; font-weight: 650; }
+.cardrona-mini .mini-quick-icon { width: 47px; height: 47px; display: flex; align-items: center; justify-content: center; background: #f2f5f6; border-radius: 13px; color: #2d6475; }
+.cardrona-mini .mini-quick-link:active .mini-quick-icon { background: #e6ebed; }
+.cardrona-mini .mini-discover-section { padding-top: 22px; }
+.cardrona-mini .mini-discover-title { display: flex; align-items: end; justify-content: space-between; gap: 10px; margin-bottom: 11px; }
+.cardrona-mini .mini-discover-title small { display: block; margin-bottom: 4px; color: #a16362; font-size: 9px; line-height: 1.3; font-weight: 800; letter-spacing: .17em; }
+.cardrona-mini .mini-discover-title h2 { font-family: 'Archivo','Inter',sans-serif; font-size: 21px; line-height: 1.2; font-weight: 780; letter-spacing: -.045em; }
+.cardrona-mini .mini-discover-title > a { display: flex; align-items: center; gap: 2px; padding-bottom: 2px; white-space: nowrap; color: var(--mini-teal); font-size: 11px; font-weight: 750; }
+.cardrona-mini .mini-discover-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; }
+.cardrona-mini .mini-discover-card { overflow: hidden; border-radius: 12px; border: 1px solid var(--mini-line); background: #fff; }
+.cardrona-mini .mini-discover-card img { width: 100%; height: 115px; display: block; object-fit: cover; }
+.cardrona-mini .mini-discover-card span { display: flex; align-items: center; justify-content: space-between; padding: 10px 9px; font-size: 11px; font-weight: 700; }
+.cardrona-mini .mini-discover-card svg { color: var(--mini-teal); }
+.cardrona-mini .mini-feature-section { padding: 22px 0 12px; }
+.cardrona-mini .mini-feature-section > .mini-discover-title { margin-inline: 16px; }
+.cardrona-mini .mini-floating-help { position: absolute; bottom: 83px; right: 15px; z-index: 20; display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; color: white; background: #276e71; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 4px 15px rgba(17,38,44,.2); }
+
+/* Navigation sits within the Mini Program, not within a simulated browser frame. */
+.cardrona-mini .mini-bottom-nav { position: relative; z-index: 30; flex: none; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); background: #fff; border-top: 1px solid var(--mini-line); min-height: 61px; padding: 5px 6px max(7px,env(safe-area-inset-bottom)); }
+.cardrona-mini .mini-nav-link { display: flex; flex-direction: column; gap: 3px; align-items: center; justify-content: center; padding: 3px 0; font-size: 10px; line-height: 1.2; font-weight: 600; color: #87939a; }
+.cardrona-mini .mini-nav-link.is-active { color: #bd2440; font-weight: 800; }
+.cardrona-mini .mini-nav-icon { position: relative; height: 22px; }
+.cardrona-mini .mini-cart-count { position: absolute; top: -7px; right: -10px; display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: #bd2440; border: 1px solid #fff; font-size: 9px; color: #fff; }
+.cardrona-mini .mini-demo-notice { margin: 9px 15px 0; padding: 8px 10px; border-radius: 9px; display: flex; align-items: center; gap: 7px; color: #6c5960; background: #fff5f4; border: 1px solid #f2e3e1; font-size: 10px; line-height: 1.4; }
+
+/* Common customer pages — keep original state and event handlers intact. */
+.cardrona-mini .mini-catalogue { background: var(--mini-paper); }
+.cardrona-mini .mini-catalogue > div:first-child { scrollbar-width: none; }
+.cardrona-mini .mini-catalogue > div:first-child button { font-size: 12px; font-weight: 700; padding: 9px 13px; border-radius: 10px; }
+.cardrona-mini .mini-catalogue article { border-color: var(--mini-line); box-shadow: 0 4px 13px rgba(23,42,53,.04); background: white; border-radius: 15px; }
+.cardrona-mini .mini-catalogue article img { object-fit: cover; }
+.cardrona-mini .mini-catalogue article h2 { font-size: 20px; color: #1c303d; line-height: 1.22; }
+.cardrona-mini .mini-catalogue article h3 { font-size: 16px; color: #1c303d; }
+.cardrona-mini .mini-catalogue article p, .cardrona-mini .mini-catalogue article li { line-height: 1.55; }
+.cardrona-mini .mini-catalogue section > div > div > article { background: #fff; }
+.cardrona-mini .mini-catalogue article button { min-height: 36px; }
+.cardrona-mini .mini-catalogue article button[class*="bg-[#5b8199]"] { background: var(--mini-red); }
+.cardrona-mini .mini-book-page { background: var(--mini-paper); }
+.cardrona-mini .mini-book-page a[class*="rounded"] { transition: transform .12s ease, box-shadow .12s ease; }
+.cardrona-mini .mini-book-page a[class*="rounded"]:active { transform: scale(.985); }
+.cardrona-mini .mini-scroll-view main { padding-bottom: 24px; }
+.cardrona-mini .mini-scroll-view main p[class*="text-[9px]"], .cardrona-mini .mini-scroll-view main p[class*="text-[10px]"] { font-size: 11px; line-height: 1.5; }
+.cardrona-mini .mini-scroll-view main button[class*="text-[9px]"], .cardrona-mini .mini-scroll-view main button[class*="text-[10px]"] { font-size: 11px; }
+
+@media (min-width: 650px) {
+  .cardrona-mini { padding: 24px; background: radial-gradient(circle at 50% 15%, #f4f7f7, #dfe7e8 72%); }
+  .cardrona-mini .mini-app-frame { max-height: 870px; border-radius: 24px; border: 1px solid rgba(67,85,96,.2); box-shadow: 0 24px 65px rgba(18,45,54,.17); }
+}
+@media (max-width: 370px) {
+  .cardrona-mini .mini-season-tag { font-size: 8px; }
+  .cardrona-mini .mini-header-bottom { padding-inline: 10px; }
+  .cardrona-mini .mini-brand-name b { font-size: 12px; letter-spacing: .14em; }
+  .cardrona-mini .mini-hero-copy h1 { font-size: 21px; }
+  .cardrona-mini .mini-quick-grid { column-gap: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cardrona-mini *, .cardrona-mini *::before, .cardrona-mini *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
