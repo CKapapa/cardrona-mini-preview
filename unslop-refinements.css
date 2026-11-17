@@ -1,0 +1,96 @@
+/* Unslop review refinements for Cardrona/Treble Cone H5 Mini Program preview.
+   Method by Damir Sokolovsky (@heydamir), CC BY 4.0.
+   https://github.com/heydamir/unslop
+   Keep existing flows, routes, demo-data disclosures and brand-specific mountain imagery. */
+:root {
+  --ink:#1e2a38; --night:#17253a; --dark:#26374a;
+  --paper:#f5f6f7; --border:#e3e6e9; --muted:#687481;
+  --accent:#be1736; --blue:#526575; --shadow:0 5px 16px rgba(20,32,47,.045);
+}
+html,body {background:#e5e8ed}
+body {color:var(--ink)}
+.preview-frame {background:#f5f6f7;box-shadow:0 10px 36px rgba(19,32,48,.10)}
+.preview-system-bar {
+  background:#eceff2;color:#69727e;letter-spacing:0;font-size:11px;
+  font-weight:500;padding:6px 16px;border-bottom:1px solid #dfe4e9;
+  min-height:28px;
+}
+.preview-mini-capsule {font-size:10px;letter-spacing:2px;border:1px solid #c9d0d9;border-radius:11px;padding:1px 8px;color:#637184}
+.site-header {background:var(--night);box-shadow:none}
+.header-inside {min-height:56px;padding:8px 16px}
+.brand-mark {width:34px;height:34px;font-size:13px;background:#c91d3d;border-radius:9px;letter-spacing:-.6px}
+.brand-text strong {font-size:12px;letter-spacing:.08em;font-weight:600}
+.brand-text small {font-size:9px;letter-spacing:.09em}
+.lang-chooser {background:transparent;border:1px solid #40526a;border-radius:9px;padding:2px;gap:2px}
+.lang-chooser button {height:27px;min-width:31px;font-weight:500;border-radius:7px}
+.lang-chooser button.on {background:#f1f4f6;color:#17253a}
+.header-bag {border-color:#40526a;border-radius:9px;padding:5px 7px;position:relative}
+.cart-indicator {min-width:16px;height:16px;background:#d52c49;font-weight:500;font-size:10px;position:absolute;right:-7px;top:-7px}
+.shell {padding-left:16px;padding-right:16px}
+.mini-mountain-picker {background:#f5f6f7;padding-top:12px;padding-bottom:12px}
+.mountain-switch {background:#e8ebef;border-radius:12px;padding:3px}
+.mountain-switch button {font-size:13px;font-weight:500;padding:10px 8px;border-radius:9px;color:#586577}
+.mountain-switch button.selected {background:var(--night);box-shadow:none}
+.mini-snow-hero {height:256px;margin:0 16px;border-radius:14px;background:#2c4157}
+.mini-snow-hero>img {filter:saturate(.86) contrast(1.04)}
+.mini-snow-overlay {padding:20px; background:linear-gradient(0deg,rgba(13,26,42,.91),rgba(13,26,42,.12) 94%)}
+.mini-snow-eyebrow {font-size:11px;letter-spacing:.03em;font-weight:500;text-transform:none}
+.mini-indicator {font-size:10px;font-weight:400;color:#cbd4df;background:rgba(24,38,56,.65);border:1px solid #7e8d9c;border-radius:5px;padding:2px 7px;letter-spacing:0}
+.mini-snow-overlay h1 {font:500 31px/1.12 var(--serif);letter-spacing:-.02em;margin:9px 0;max-width:285px}
+.mini-snow-overlay p {font-size:13px;line-height:1.45;max-width:255px;color:#e8edf3;margin-bottom:14px}
+.mini-hero-cta {background:#c41d3e;color:#fff;border-radius:9px;padding:11px 14px;gap:10px;font-size:13px;font-weight:600;min-height:44px}
+.mini-hero-cta:hover {background:#ad1834}
+.mini-status-summary {padding-top:12px}
+.mini-status-banner {background:#fff;border-color:#e2e6eb;border-radius:12px;padding:12px 14px;gap:10px}
+.mini-status-pulse {background:#8a929c;box-shadow:none;width:7px;height:7px}
+.mini-status-banner strong {font-size:13px;font-weight:500}
+.mini-status-banner small {font-size:11px;color:#737e8a}
+.mini-status-banner a {color:#657181}
+.mini-metrics {margin-top:8px;gap:0;background:#fff;border:1px solid #e2e6eb;border-radius:12px;overflow:hidden}
+.mini-metrics>div {padding:11px 14px;border:0;border-radius:0;min-height:70px;gap:4px}
+.mini-metrics>div + div {border-left:1px solid #e2e6eb}
+.mini-metrics>div>span {font-size:11px;color:#667482}
+.mini-metrics>div>span svg {width:16px;height:16px;stroke-width:1.5}
+.mini-metrics strong {font-size:18px;line-height:1;color:#63707e;font-weight:500}
+.mini-metrics small {font-size:10px;color:#818a96}
+.mini-services,.mini-feature {padding-top:22px}
+.mini-section-title {margin-bottom:12px}
+.mini-section-title h2 {font-size:21px;font-weight:500;letter-spacing:0;color:#223042}
+.eyebrow,.mini-feature-card small,.photo-tag,.photo-corner {text-transform:none;letter-spacing:0;font-weight:500}
+.eyebrow {font-size:11px;color:#697584}
+.mini-see-all {font-size:12px;font-weight:500;color:#56687a}
+.quick-grid {grid-template-columns:1fr 1fr;gap:8px}
+.quick-card {min-height:68px;background:#fff;border:1px solid #e2e6eb;border-radius:12px;padding:12px;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;text-align:left;gap:10px;box-shadow:none}
+.quick-card .quick-icon {background:transparent;color:#586778;border-radius:0;width:23px;height:23px;margin:0;flex-shrink:0}
+.quick-card .quick-icon svg {width:20px;height:20px;stroke-width:1.5}
+.quick-card strong {font-size:13px;font-weight:500;line-height:1.25}
+.quick-card:hover {box-shadow:none;border-color:#bfc7d0}
+.mini-feature-card {border-radius:14px;min-height:140px}
+.mini-feature-card img {height:145px;filter:brightness(.67) saturate(.86)}
+.mini-feature-card>div {padding:16px;gap:7px}
+.mini-feature-card small {font-size:11px;letter-spacing:0}
+.mini-feature-card strong {font:500 24px/1.1 var(--serif)}
+.mini-feature-card span {font-size:12px}
+.mini-tip>div {background:transparent;color:#687585;border:0;border-top:1px solid #dfe4e9;border-radius:0;padding:12px 0}
+.mini-tip p {font-size:11px}
+.page-main {padding-top:24px}
+.page-head h1 {font-size:32px;font-weight:500;line-height:1.15}
+.chip {border-radius:9px;padding:10px 14px;border-color:#e1e5ea;color:#586576;font-weight:500;background:#fff}
+.chip.chosen {background:var(--night);border-color:var(--night)}
+.experience-card,.checkout-card,.trip-card,.info-pane,.account-card,.prearrival {border-radius:14px}
+.experience-body h3 {font-size:24px;font-weight:500}
+.experience-bottom b {font-size:21px}
+.inline-action {color:#ad1735;font-weight:500}
+.btn {border-radius:9px;font-weight:500;transform:none}
+.btn:hover {transform:none}
+.btn-dark {background:var(--night)}
+.btn-dark:hover {background:#263c57}
+.order-panel {border-radius:14px}
+.mobile-nav {background:#fff;box-shadow:none;border-color:#e2e6eb;padding-top:9px}
+.mobile-nav a {color:#737e8b;font-weight:500;font-size:11px}
+.mobile-nav a svg {width:19px;height:19px;stroke-width:1.5}
+.mobile-nav a.is-active {color:#ad1735}
+.mobile-nav a.is-active svg {stroke-width:1.7}
+.mini-snow-hero a:focus-visible,.mini-services a:focus-visible {outline:2px solid #c41d3e;outline-offset:3px}
+@media(min-width:701px){.preview-frame{border-radius:16px}}
+@media(max-width:440px){.preview-frame{box-shadow:none}.preview-system-bar{font-size:10px;padding:6px 16px}}
