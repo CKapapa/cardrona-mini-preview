@@ -10,7 +10,7 @@ import { useLang } from '@/lib/i18n';
 import { NZD } from '@/lib/format';
 
 const CHANNELS = ['In store', 'Click & collect', 'Online'];
-const METHODS = ['Card', 'Cash', 'WeChat Pay', 'Alipay', 'Gift Voucher'];
+const METHODS = ['Card', 'Cash', 'WeChat Pay', 'Gift Voucher'];
 
 export default function RecordSaleDialog({ product, products, open, onOpenChange, onSaved }) {
   const { t } = useLang();

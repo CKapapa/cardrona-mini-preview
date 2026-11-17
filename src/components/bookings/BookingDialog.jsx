@@ -245,7 +245,7 @@ export default function BookingDialog({ open, onOpenChange, booking, lessons, ag
             </Field>
           )}
           <Field label="Payment method" hint="Refunds return to this method">
-            <SelectNative value={form.payment_method || 'Visa'} onChange={set('payment_method')} options={['WeChat Pay', 'Visa', 'Mastercard', 'Alipay', 'Cash', 'Account']} />
+            <SelectNative value={form.payment_method || 'Visa'} onChange={set('payment_method')} options={['WeChat Pay', 'Visa', 'Mastercard', 'Cash', 'Account']} />
           </Field>
 
           <div className="sm:col-span-2 mt-1 border-t border-border/70 pt-3">
