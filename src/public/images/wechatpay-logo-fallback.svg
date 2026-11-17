@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 251" role="img" aria-label="微信支付 WeChat Pay">
+  <!-- Local fallback illustration; for exact licensed artwork obtain official material from WeChat Pay. -->
+  <path fill="#16A83E" d="M144 2C66 2 0 51 0 120c0 36 15 65 45 86l-16 34c-3 7 2 12 10 8l45-18c18 7 37 11 60 11 81 0 141-50 141-119C285 54 225 2 144 2Z"/>
+  <path fill="#fff" d="M67 103c-8-12 1-17 9-12l43 28L265 58c13-7 19 7 8 15L126 154c-8 5-13 4-20-3Z"/>
+  <text x="341" y="125" fill="#1F1A17" font-family="-apple-system,Arial,'Noto Sans CJK SC',sans-serif" font-size="96" font-weight="500">微信支付</text>
+  <text x="347" y="222" fill="#1F1A17" font-family="Arial,'Helvetica Neue',sans-serif" font-size="70" font-weight="400">WeChat Pay</text>
+</svg>
